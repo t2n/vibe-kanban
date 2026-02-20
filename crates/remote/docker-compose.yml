@@ -15,8 +15,6 @@ services:
       timeout: 5s
       retries: 5
       start_period: 5s
-    ports:
-      - "5433:5432"
 
   electric:
     image: electricsql/electric:1.3.3
@@ -88,8 +86,6 @@ services:
       AZURE_STORAGE_ENDPOINT_URL: ${AZURE_STORAGE_ENDPOINT_URL:-}
       AZURE_STORAGE_PUBLIC_ENDPOINT_URL: ${AZURE_STORAGE_PUBLIC_ENDPOINT_URL:-}
 
-    ports:
-      - "8081:8081"
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:8081/v1/health"]
