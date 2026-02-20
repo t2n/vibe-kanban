@@ -41,7 +41,7 @@ services:
 
   remote-server:
     build:
-      context: ../..
+      context: .
       dockerfile: crates/remote/Dockerfile
       args:
         FEATURES: ${FEATURES:-}
